@@ -24,7 +24,7 @@ spl_autoload_register(
 );
 
 
-use unipa\core\Person;
+use Unipa\Core\Person;
 
 $p1 = new Person;
 $p1->setName("Mario");

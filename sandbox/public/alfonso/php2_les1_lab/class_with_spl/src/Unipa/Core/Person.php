@@ -1,6 +1,6 @@
 <?php
 
-namespace unipa\core;
+namespace Unipa\Core;
 
 class Person {
 	
