@@ -18,8 +18,3 @@
 
 ## ERRATA
 * file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/2/12: last bullet: underscores: not true
-
-from Alfonso Alongi to All Participants:
-alfonso.alongi@live.it
-from Alfonso Alongi to All Participants:
-suite117@gmail.com
