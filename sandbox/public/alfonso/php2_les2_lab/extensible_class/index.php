@@ -40,6 +40,16 @@
         echo '$e1->getLastName() ==  $f1->getLastName() ? "' . ($e1->getLastName() == $f1->getLastName()) . '"' . PHP_EOL;
 
         echo 'strcmp($e1->getLastName(), $f1->getLastName()) ? "' . strcmp($e1->getLastName(), $f1->getLastName()) . '"' . PHP_EOL;
+
+        // And
+        if ("" && 1) {
+            echo "Why am I here?";
+        }
+
+        if ($e1->getLastName() == $f1->getLastName() && 1) {
+            echo "Why am I here?";
+        }
+
     ?>
 
 </pre>
