@@ -1,5 +1,5 @@
 <?php
-
+    error_reporting(E_ALL);
     spl_autoload_register(
 
         function ($class) {
@@ -34,9 +34,12 @@
         var_dump($f1->toJSON()) . PHP_EOL;
         var_dump($f2) . PHP_EOL;
 
-        echo '$e1->getFirstName() ==  $f1->getFirstName() ? ' . $e1->getFirstName() ==  $f1->getFirstName() . PHP_EOL;
+        echo '$e1->getFirstName() ==  $f1->getFirstName() ? "' . ($e1->getFirstName() ==  $f1->getFirstName())  . '"'  . PHP_EOL;
 
-        echo '$e1->getLastName() ==  $f1->getLastName() ? ' . $e1->getLastName() ==  $f1->getLastName() . PHP_EOL;
+        echo 'For Doug: strange PHP behavior when using == on different strings. Better strcmp ;-)?' . PHP_EOL;
+        echo '$e1->getLastName() ==  $f1->getLastName() ? "' . ($e1->getLastName() == $f1->getLastName()) . '"' . PHP_EOL;
+
+        echo 'strcmp($e1->getLastName(), $f1->getLastName()) ? "' . strcmp($e1->getLastName(), $f1->getLastName()) . '"' . PHP_EOL;
     ?>
 
 </pre>
