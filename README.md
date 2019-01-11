@@ -1,7 +1,11 @@
 # PHP-II Jan 2019
 
+file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/2/35
+
 ## Homework
-* For Wed 9 Jan 2019
+* For Fri 11 Jan 2019
+  * Lab: Create an Extensible Super Class
+* For Wed 09 Jan 2019
   * Lab: Namespace
   * Lab: Create a Class
 ## Q & A
