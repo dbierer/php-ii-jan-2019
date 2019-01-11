@@ -9,7 +9,7 @@ class Person extends Base {
 	protected $address;
 	
 	public function getName() {
-		return "$this->lastName $this->name";
+		return "$this->lastName, $this->firstName";
 	}
 
 	public function getFirstName(){
