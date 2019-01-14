@@ -24,9 +24,12 @@ abstract class Base implements \JsonSerializable
     // Direct access to properties
     public function __get($name)
     {
+	  // suggestion: remove next 3 lines
+	  /*
       if (isset($this->{$name}))
           return $this->{$name};
-      else 
+      else
+      */ 
           throw new \Exception("property $name not found");
     }
 

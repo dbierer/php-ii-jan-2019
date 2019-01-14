@@ -1,0 +1,8 @@
+1547441332|PDOException:invalid data source name
+2019-01-13 20:50:19|PDOException:invalid data source name
+2019-01-13 20:50:45|PDOException:invalid data source name
+2019-01-13 20:51:21|7|PDOException:invalid data source name
+2019-01-13 20:51:45|7|PDOException:invalid data source name
+2019-01-13 20:52:56|/home/vagrant/php-ii-jan-2019/sandbox/public/exceptions_multiple_catch.php|7|PDOException:invalid data source name
+2019-01-13 20:53:20|
+/home/vagrant/php-ii-jan-2019/sandbox/public/exceptions_multiple_catch.php|7|PDOException:invalid data source name

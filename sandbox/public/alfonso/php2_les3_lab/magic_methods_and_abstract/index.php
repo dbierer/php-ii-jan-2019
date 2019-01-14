@@ -32,7 +32,11 @@
     echo  $e1->toJSON() . PHP_EOL . PHP_EOL;
 
     // I can access to protected properties because I created __get magic method
-    echo $e1->getRole("Developer") . ' ' . $e1->address . PHP_EOL . PHP_EOL;
+    try {
+		echo $e1->getRole("Developer") . ' ' . $e1->address . PHP_EOL . PHP_EOL;
+	} catch (Exception $e) {
+		echo $e->getMessage(). PHP_EOL;
+	}
 
     $f1->setFirstName("Mario");
     $f1->setLastName("Rossi");
@@ -43,7 +47,11 @@
     echo $f1->getContactDetails() . PHP_EOL . PHP_EOL;
 
     // Throws error because method does not exist for Freelance Object
-    $f1->setRole("Developer");
+    try {
+		$f1->setRole("Developer");
+	} catch (Throwable $t) {
+		echo $t->getMessage() . PHP_EOL;
+	}
 ?>
 
 </pre>
