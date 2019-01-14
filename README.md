@@ -1,10 +1,15 @@
 # PHP-II Jan 2019
 
-file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/2/35
+file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/2/59
 NOTE TO SELF: get callables example working right!
+NOTE TO SELF: lookup PHP RFC re: uniform handling of constructor failures to initialize
 
 ## Homework
-* For Mon 13 Jan 2019
+* For Wed 16 Jan 2019
+  * Lab: Type Hinting
+  * Lab: Build Custom Exception Class
+  * Lab: Traits
+* For Mon 14 Jan 2019
   * Lab: Magic Methods
   * Lab: Abstract Classes
   * Lab: Interfaces
@@ -31,7 +36,10 @@ NOTE TO SELF: get callables example working right!
         * implementation of PSR-7 interfaces
     * https://github.com/dbierer/oauth.unlikelysource.org/blob/master/module/AuthOauth/src/AuthOauth/Adapter/BaseAdapter.php
         * NOTE: need to add `authenticate()` as an abstract method as it's mandatory
+* Traits example: https://github.com/dbierer/classic_php_examples/blob/master/oop/trait_insteadof_example.php
+
 ## ERRATA
 * file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/2/12: last bullet: underscores: not true
 * file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/2/46: not necessarily! i.e. look at Zend\Diactoros as an example; otherwise, just use an interface
 * General: OOP section: Need to discuss `__invoke()`!!!
+* file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/2/73: there are more than 2!!!
