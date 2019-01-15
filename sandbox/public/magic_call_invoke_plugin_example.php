@@ -32,20 +32,20 @@ class Temp
 }
 
 $plugins = [
-	'arrayMethod'    => [new Temp(), 'doSomething'],
-	'functionMethod' => function ($params) { return 'Anon Function'; },
-	'classMethod' 	 => new class([]) {
+	'method1' => [new Temp(), 'doSomething'],
+	'method2' => function ($params) { return 'Anon Function'; },
+	'method3' => new class([]) {
 		public function __construct($params) {}
 		public function __invoke() { return 'Anon Class'; }
 	},
 ];
 	
 $ex = new UsesPlugins($plugins);
-echo $ex->arrayMethod(); 
+echo '#1: Array Callable:     ' . $ex->method1(); 
 echo PHP_EOL;
-echo $ex->functionMethod(); 
+echo '#2: Anonymous Function: ' . $ex->method2(); 
 echo PHP_EOL;
-echo $ex->classMethod();
+echo '#3: Anonymous Class:    ' . $ex->method3();
 echo PHP_EOL;
 echo $ex->doesntExist();
 echo PHP_EOL;

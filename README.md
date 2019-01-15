@@ -1,8 +1,6 @@
 # PHP-II Jan 2019
 
 file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/2/59
-NOTE TO SELF: get callables example working right!
-NOTE TO SELF: lookup PHP RFC re: uniform handling of constructor failures to initialize
 
 ## Homework
 * For Wed 16 Jan 2019
@@ -25,8 +23,12 @@ NOTE TO SELF: lookup PHP RFC re: uniform handling of constructor failures to ini
     * got rid of the "requirement" that the top-level of a namespace must be the "vendor" name
     * underscores (_) have no special meaning
     * removed implementation details/requirements: leaves that up to you
+
 * Q: do you have an example of plugin manager functionality using __call()?
 * A: you could implement an array of callbacks which could be consulted by __call()
+
+* Q: Is there documentation on the effort to make __construct() method failures consistent by throwing Exceptions?
+* A: See: https://wiki.php.net/rfc/internal_constructor_behaviour
 
 ## CLASS NOTES
 * Magic Methods: https://secure.php.net/manual/en/language.oop5.magic.php
