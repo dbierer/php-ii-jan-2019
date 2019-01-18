@@ -3,6 +3,10 @@
 file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/4/18
 
 ## Homework
+* For Mon 21 Jan 2019
+  * Lab: Prepared Statements
+  * Lab: Stored Procedure
+  * Lab: Transaction
 * For Fri 18 Jan 2019
   * Lab: SQL Statements
 * For Wed 16 Jan 2019
@@ -63,6 +67,7 @@ define('BASE', reallyRealPath(__DIR__ . '/../'));
     * https://github.com/dbierer/oauth.unlikelysource.org/blob/master/module/AuthOauth/src/AuthOauth/Adapter/BaseAdapter.php
         * NOTE: need to add `authenticate()` as an abstract method as it's mandatory
 * Traits example: https://github.com/dbierer/classic_php_examples/blob/master/oop/trait_insteadof_example.php
+* Other PDO examples: https://github.com/dbierer/classic_php_examples/tree/master/db
 
 ## ERRATA
 * file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/2/12: last bullet: underscores: not true
@@ -70,3 +75,4 @@ define('BASE', reallyRealPath(__DIR__ . '/../'));
 * General: OOP section: Need to discuss `__invoke()`!!!
 * file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/2/73: there are more than 2!!!
 * OrderApp: dates are not formatted properly!
+* file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/4/25: remove the `execute()` statement!
