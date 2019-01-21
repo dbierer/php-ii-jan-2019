@@ -1,8 +1,12 @@
 # PHP-II Jan 2019
 
 file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/4/18
+NOTE TO SELF: how to get PDO Sqlite to work in VM?
+NOTE TO SELF: are there any issues creating a stored procedure from PHP code?
 
 ## Homework
+* For Wed 23 Jan 2019
+  * Lab: Email
 * For Mon 21 Jan 2019
   * Lab: Prepared Statements
   * Lab: Stored Procedure
