@@ -9,23 +9,21 @@ $opt = [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
  try {
     $pdo = new PDO($dsn, $usr, $pwd, $opt);
     
-    $procedure = 'DROP PROCEDURE IF EXISTS customers.getAllWhere;
-            DELIMITER $
-            CREATE PROCEDURE customers.getAllWhere(
-                p_where text
-            )
-            BEGIN
-                SELECT * FROM messages WHERE p_where
-            END
-            $
-            DELIMITER;
-
-    ';
-    $stmt = $pdo->prepare($procedure);
-    $stmt->execute();
-
-    $stmt = $pdo->prepare("CALL customers.getAllWhere(?)");
-    $stmt->execute("amount > 10");
+	// this is created directly in database:
+    $pdo->exec('DROP PROCEDURE IF EXISTS phpcourse.getAllWhere');
+    $procedure = <<<'EOT'
+DELIMITER $
+CREATE PROCEDURE phpcourse.getAllWhere(p_where int) 
+BEGIN 
+	SELECT * FROM `orders` WHERE `amount` > p_where; 
+END 
+$ 
+DELIMITER ; 
+EOT;
+    $pdo->exec($procedure);
+	
+    $stmt = $pdo->prepare('CALL phpcourse.getAllWhere(?)');
+    $stmt->execute(['amount > 10']);
 }
 catch(PDOException $e) {
     // Print PDOException message

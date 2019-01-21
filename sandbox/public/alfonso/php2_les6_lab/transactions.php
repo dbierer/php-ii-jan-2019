@@ -3,13 +3,17 @@
  // Set default timezone
  date_default_timezone_set('UTC');
 
+ $dsn['sqlite'] = 'sqlite:database.sqlite3';
+ $dsn['mysql']  = 'mysql:dbname=phpcourse;host=localhost';
+
  try {
 
     // Create new database in memory
     // $pdo = new PDO('sqlite::memory:');
 
     // Create (connect to) SQLite database in file
-    $pdo = new PDO('sqlite:database.sqlite3');
+    //$pdo = new PDO('sqlite:database.sqlite3');
+    $pdo = new PDO($dsn['mysql'], 'vagrant', 'vagrant');
     
     // Set errormode to exceptions
     $pdo->setAttribute(PDO::ATTR_ERRMODE, 
