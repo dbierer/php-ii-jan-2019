@@ -15,29 +15,39 @@ $dsn['mysql']  = 'mysql:dbname=phpcourse;host=localhost';
     // $pdo = new PDO('sqlite::memory:');
 
     // Create (connect to) SQLite database in file
-    $pdo = new PDO($dsn['mysql'], 'vagrant', 'vagrant');
+    //$pdo = new PDO($dsn['mysql'], 'vagrant', 'vagrant');
+    $pdo = new PDO($dsn['sqlite']);
     
     // Set errormode to exceptions
     $pdo->setAttribute(PDO::ATTR_ERRMODE, 
                                 PDO::ERRMODE_EXCEPTION);
 
+	// Find last ID
+	$stmt2 = $pdo->query('SELECT id FROM messages ORDER BY id DESC LIMIT 1');
+	$id = (int) $stmt2->fetchColumn();
+
     // Create tables
-    $pdo->exec("CREATE TABLE IF NOT EXISTS messages (
-                        id INTEGER PRIMARY KEY, 
-                        title VARCHAR(50) UNIQUE, 
-                        message TEXT, 
-                        time INTEGER)");
+    if (!$id) {
+		$pdo->exec(
+			'CREATE TABLE IF NOT EXISTS messages (
+				id INTEGER PRIMARY KEY, 
+				title VARCHAR(50) UNIQUE, 
+				message TEXT, 
+				time INTEGER
+			'
+		);
+	}
 
-
-    // Array with some test data to insert to database             
+    // Array with some test data to insert to database   
+    $today = date('Y-m-d H:i:s');          
     $messages = array(
-                    array('title' => 'Hello!',
+                    array('title' => 'Hello! ' . $today,
                         'message' => 'Just testing...',
                         'time' => 1327301464),
-                    array('title' => 'Hello again!',
+                    array('title' => 'Hello again! ' . $today,
                         'message' => 'More testing...',
                         'time' => 1339428612),
-                    array('title' => 'Hi!',
+                    array('title' => 'Hi! ' . $today,
                         'message' => 'SQLite3 is cool...',
                         'time' => 1327214268)
                 );
@@ -45,12 +55,11 @@ $dsn['mysql']  = 'mysql:dbname=phpcourse;host=localhost';
     // Prepare INSERT statement to SQLite3 memory db
     $insert = "INSERT INTO messages (id, title, message, time) 
                 VALUES (:id, :title, :message, :time)";
-    $stmt = $pdo->prepare($insert);
-
-	$id = 1;
+    $stmt1 = $pdo->prepare($insert);
+	
     foreach($messages as $index => $m) {
-		$m['id'] = $id++;
-        $stmt->execute($m);
+		$m['id'] = ++$id;
+        $stmt1->execute($m);
     }
 
     // Select all data from memory db messages table 

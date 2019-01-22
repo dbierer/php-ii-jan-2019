@@ -2,6 +2,12 @@
 
 file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/4/18
 NOTE TO SELF: how to get PDO Sqlite to work in VM?
+* sudo pecl install pdo_sqlite worked ... but the build failed: not the current version
+* https://stackoverflow.com/questions/22551971/failed-to-install-pdo
+* https://stackoverflow.com/questions/8822209/pdo-sqlite-driver-not-present-what-to-do
+```
+sudo apt-get install php7.2-sqlite
+```
 
 ## Homework
 * For Wed 23 Jan 2019
