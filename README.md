@@ -2,7 +2,6 @@
 
 file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/4/18
 NOTE TO SELF: how to get PDO Sqlite to work in VM?
-NOTE TO SELF: are there any issues creating a stored procedure from PHP code?
 
 ## Homework
 * For Wed 23 Jan 2019
@@ -27,6 +26,25 @@ NOTE TO SELF: are there any issues creating a stored procedure from PHP code?
   * Lab: Namespace
   * Lab: Create a Class
 ## Q & A
+* Q: Are there any issues creating a stored procedure from PHP code?
+* A: YES!  See: https://stackoverflow.com/questions/11300595/the-mysql-delimiter-keyword-isnt-working
+    * Commands between the `BEGIN` and `END` block of the stored procedure creation code need to have the delimiter `;`
+    * The shell command `DELIMITER` which is used to change the delimiter, is *not part of SQL*!
+    * PDO will not send an SQL statement which contains `DELIMITER`: you will get a fatal error
+    * The best approach is to create the stored procedure as a database administrator (DBA)
+    * Alternatively ... and this is an *extremely* poor substitute, you can issue a _command shell_ command as follows:
+```
+shell_exec('mysql -u vagrant -pvagrant -e "DELIMITER #"');
+```
+    * You can then use PDO to send the commands to build the stored procedure
+```
+$pdo->exec($stored);
+```
+    * Afterwards, shell out to reset the delimiter:
+```    
+shell_exec('mysql -u vagrant -vagrant -e "DELIMITER ;"');
+```
+
 * Q: What's a good quick way to learn about the Domain Model?
 * A: See: https://www.infoq.com/minibooks/domain-driven-design-quickly
 
