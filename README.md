@@ -10,6 +10,17 @@ sudo apt-get install php7.2-sqlite
 ```
 
 ## Homework
+* For Fri 25 Jan 2019
+  * Lab: Validate an Email Address
+  * Lab: preg_split:
+```
+// TODO: get this to work!
+// or using preg_split()
+$test = 'To this,ha ha,I say tally ho. Ta ta. "Ha hah"';
+$words = preg_split('/[^A-Za-z]|\s|\b/', $test);
+var_dump($words);
+```
+  * Lab: Composer with OrderApp
 * For Wed 23 Jan 2019
   * Lab: Email
 * For Mon 21 Jan 2019
@@ -47,7 +58,7 @@ shell_exec('mysql -u vagrant -pvagrant -e "DELIMITER #"');
 $pdo->exec($stored);
 ```
     * Afterwards, shell out to reset the delimiter:
-```    
+```
 shell_exec('mysql -u vagrant -vagrant -e "DELIMITER ;"');
 ```
 
@@ -96,6 +107,11 @@ define('BASE', reallyRealPath(__DIR__ . '/../'));
         * NOTE: need to add `authenticate()` as an abstract method as it's mandatory
 * Traits example: https://github.com/dbierer/classic_php_examples/blob/master/oop/trait_insteadof_example.php
 * Other PDO examples: https://github.com/dbierer/classic_php_examples/tree/master/db
+* Excellent 3rd party library for mail: PHP Mailer
+    * https://github.com/PHPMailer/PHPMailer
+    * SMTP example: https://github.com/PHPMailer/PHPMailer/blob/master/examples/smtp.phps
+* Example of preg_replace_callback_array()
+    * https://github.com/dbierer/php7cookbook/blob/master/source/Application/Parse/Convert.php
 
 ## ERRATA
 * file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/2/12: last bullet: underscores: not true
@@ -104,3 +120,5 @@ define('BASE', reallyRealPath(__DIR__ . '/../'));
 * file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/2/73: there are more than 2!!!
 * OrderApp: dates are not formatted properly!
 * file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/4/25: remove the `execute()` statement!
+* file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/6/3: can also use [] as delimiters
+* file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/6/14: need to mention imprecise quantifiers (*+?)
