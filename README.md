@@ -1,23 +1,13 @@
 # PHP-II Jan 2019
 
 file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/4/18
-NOTE TO SELF: how to get PDO Sqlite to work in VM?
-* sudo pecl install pdo_sqlite worked ... but the build failed: not the current version
-* https://stackoverflow.com/questions/22551971/failed-to-install-pdo
-* https://stackoverflow.com/questions/8822209/pdo-sqlite-driver-not-present-what-to-do
-```
-sudo apt-get install php7.2-sqlite
-```
 
 ## Homework
 * For Fri 25 Jan 2019
   * Lab: Validate an Email Address
-  * Lab: preg_split:
+  * Lab: preg_split: the trick is to add the `PREG_SPLIT_NO_EMPTY` flag :-)
 ```
-// TODO: get this to work!
-// or using preg_split()
-$test = 'To this,ha ha,I say tally ho. Ta ta. "Ha hah"';
-$words = preg_split('/[^A-Za-z]|\s|\b/', $test);
+$words = preg_split('/[^a-z]/i', $test, 0, PREG_SPLIT_NO_EMPTY);
 var_dump($words);
 ```
   * Lab: Composer with OrderApp
@@ -42,6 +32,7 @@ var_dump($words);
 * For Wed 09 Jan 2019
   * Lab: Namespace
   * Lab: Create a Class
+
 ## Q & A
 * Q: Are there any issues creating a stored procedure from PHP code?
 * A: YES!  See: https://stackoverflow.com/questions/11300595/the-mysql-delimiter-keyword-isnt-working
@@ -112,6 +103,14 @@ define('BASE', reallyRealPath(__DIR__ . '/../'));
     * SMTP example: https://github.com/PHPMailer/PHPMailer/blob/master/examples/smtp.phps
 * Example of preg_replace_callback_array()
     * https://github.com/dbierer/php7cookbook/blob/master/source/Application/Parse/Convert.php
+* How to get PDO Sqlite to work in VM:
+    * sudo pecl install pdo_sqlite worked ... but the build failed: not the current version
+    * https://stackoverflow.com/questions/22551971/failed-to-install-pdo
+    * https://stackoverflow.com/questions/8822209/pdo-sqlite-driver-not-present-what-to-do
+    * Installed with `apt-get` using exact version of PHP
+```
+sudo apt-get install php7.2-sqlite
+```
 
 ## ERRATA
 * file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/2/12: last bullet: underscores: not true
