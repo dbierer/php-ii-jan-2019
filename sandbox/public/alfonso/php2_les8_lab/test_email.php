@@ -30,7 +30,7 @@ function match($pattern, $subject)
 # RFC2821 and RFC2822
 # https://www.jochentopf.com/email/chars.html
 # local-part@domain
-$emailChars= "+\.0-9A-Za-z_";
+$emailChars= "+\.0-9A-Za-z_-";
 $localpart = "([$emailChars]{1,64})";
 $domainChars = "0-9A-Za-z-";
 $domain = "([$domainChars]+)(\.([$domainChars]+))?";

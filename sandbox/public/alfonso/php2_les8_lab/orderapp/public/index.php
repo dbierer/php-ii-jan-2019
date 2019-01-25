@@ -5,18 +5,8 @@
 
 define('BASE', realpath(__DIR__ . '/../'));
 
-/**
- * @todo: revise this
- */
-spl_autoload_register(
-    function ($class) {
-        $file = str_replace('\\', '/', $class) . '.php';
-        require BASE . '/src/' . $file;
-    }
-);
-
 /* Composer */
-require_once "../vendor/autoload.php";
+require_once __DIR__ . '/../vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 

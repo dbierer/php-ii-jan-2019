@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<produce xmlns:ea="test">
+	<vegetables>
+		<vegetable unit="pound">
+			<name>tomatoes</name>
+			<price>2.99</price>
+		</vegetable>
+	</vegetables>
+	<fruits>
+		<fruit unit="pint">
+			<name>strawberries</name>
+			<price>4.99</price>
+			<time>seasonal</time>
+		</fruit>
+	</fruits>
+</produce>
