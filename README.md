@@ -111,6 +111,8 @@ define('BASE', reallyRealPath(__DIR__ . '/../'));
 ```
 sudo apt-get install php7.2-sqlite
 ```
+* Documentation from doc blocks
+  * https://www.phpdoc.org/
 
 ## ERRATA
 * file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/2/12: last bullet: underscores: not true
@@ -121,3 +123,5 @@ sudo apt-get install php7.2-sqlite
 * file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/4/25: remove the `execute()` statement!
 * file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/6/3: can also use [] as delimiters
 * file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/6/14: need to mention imprecise quantifiers (*+?)
+* file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/9/4: this doesn't work: need to use namespace syntax!
+* file:///D:/Repos/PHP-Fundamentals-II/Course_Materials/index.html#/9/7: validation example
